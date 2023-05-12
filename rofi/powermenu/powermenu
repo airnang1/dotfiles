@@ -17,12 +17,12 @@ theme='config'
 uptime="`uptime -p | sed -e 's/up //g'`"
 
 # Options
-shutdown='⏼'
-reboot='e872'
-lock='🔒'
+shutdown=''
+reboot=''
+lock=''
 suspend='⏾'
 hibernate='⚔'
-logout=''
+logout=''
 yes='Y'
 no='N'
 
@@ -98,8 +98,8 @@ case ${chosen} in
     $lock)
         if [[ -x '/usr/bin/betterlockscreen' ]]; then
             betterlockscreen -l dim
-        elif [[ -x '/usr/bin/i3lock' ]]; then
-            i3lock
+        elif [[ -x '/usr/bin/i3lock-fancy' ]]; then
+            i3lock-fancy
         fi
         ;;
     $suspend)

@@ -43,6 +43,16 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+
+# Brightness keys
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/volume_brightness.sh brightness_up
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/volume_brightness.sh brightness_down
+
+# media keys
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -69,7 +79,7 @@ tiling_drag modifier titlebar
 # start a terminal
 bindsym $mod+Return exec alacritty
 
-bindsym $mod+p exec flameshot
+bindsym $mod+p exec "flameshot gui"
 
 # kill focused window
 bindsym $mod+q kill
@@ -160,10 +170,13 @@ set $ws10 "10"
 # *** Workspace specific settings ***               #
 ##=================================================##
 # Assign Workspaces:
-assign [instance="Firefox"] $ws3
-assign [instance="pamac-manager"] $ws5
+# assign [instance="Firefox"] $ws3
+# assign [instance="Skype"] $ws6
+# assign [instance="pamac-manager"] $ws5
 
 # switch to workspace
+# focus_wrapping workspace
+# bindsym $mod+Tab focus output right
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
@@ -230,11 +243,13 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # dunst
 exec_always --no-startup-id $HOME/.config/dunst/launch
 
+exec_always --no-startup-id picom
+
 # wallpaper with feh
-exec_always feh --bg-fill $HOME/Pictures/wallpapers/catppuccin-01.png
+exec_always feh --bg-fill /home/airnang/Downloads/1481027917.0.jpg
 
 # my shortcuts
-bindsym Print exec "screengrab"
+bindsym Print exec "FlameShoot"
 
 # border
  default_border pixel 2
@@ -284,4 +299,13 @@ smart_gaps on
 smart_borders no_gaps
 
 # Screenshoot with Flameshot
-# bindsym Print exec "flameshot"
+exec --no-startup-id Spotify
+exec --no-startup-id skypeforlinux
+exec --no-startup-id "ibus start"
+
+for_window [class="Code"] move to workspace $ws1
+for_window [class="Skype"] move to workspace $ws4
+for_window [class="firefox"] move to workspace $ws5
+for_window [class="Spotify"] move to workspace $ws7
+for_window [class="Anydesk"] move to workspace $ws7
+

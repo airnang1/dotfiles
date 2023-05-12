@@ -4,8 +4,8 @@
 ## Github  : @adi1090x
 #
 ## Applets : MPD (music)
-HOME=""
-theme="$HOME/rofi/mpd/style.rasi"
+# HOME=""
+theme="$HOME/.config/rofi/mpd/style.rasi"
 
 # Theme Elements
 status="`mpc status`"

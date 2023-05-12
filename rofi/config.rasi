@@ -22,4 +22,13 @@ configuration {
     me-accept-entry: "!MousePrimary";
 }
 
-@theme "~/dotfiles/rofi/launchers.rasi"
+//@theme "~/.config/rofi/launchers.rasi"
+//@theme "/usr/share/rofi/themes/android_notification.rasi"
+//@theme "/usr/share/rofi/themes/sidebar-v2.rasi"
+//@theme "/usr/share/rofi/themes/arthur.rasi"
+//@theme "/usr/share/rofi/themes/Adapta-Nokto.rasi"
+//@theme "/usr/share/rofi/themes/sidebar.rasi"
+//@theme "/usr/share/rofi/themes/Monokai.rasi"
+//@theme "/usr/share/rofi/themes/gruvbox-common.rasi"
+//@theme "/usr/share/rofi/themes/fancy.rasi"
+@theme "/usr/share/rofi/themes/arthur.rasi"
