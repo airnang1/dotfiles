@@ -246,7 +246,7 @@ exec_always --no-startup-id $HOME/.config/dunst/launch
 exec_always --no-startup-id picom
 
 # wallpaper with feh
-exec_always feh --bg-fill /home/airnang/Downloads/1481027917.0.jpg
+exec_always feh --bg-fill ~/.config/screenshoot/b.png
 
 # my shortcuts
 bindsym Print exec "FlameShoot"
@@ -288,8 +288,13 @@ client.background          #282a36
 
 # gaps
 # Set inner/outer gaps
-gaps inner 25
-gaps outer 15
+for_window [class="^.*"] border pixel 3
+gaps inner 10
+gaps top 30
+gaps bottom 30
+gaps outer 10
+
+floating_maximum_size 1920 x 1080
 
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps on
@@ -301,7 +306,8 @@ smart_borders no_gaps
 # Screenshoot with Flameshot
 exec --no-startup-id Spotify
 exec --no-startup-id skypeforlinux
-exec --no-startup-id "ibus start"
+exec --no-startup-id anydesk
+exec --no-startup-id ibus start
 
 for_window [class="Code"] move to workspace $ws1
 for_window [class="Skype"] move to workspace $ws4
